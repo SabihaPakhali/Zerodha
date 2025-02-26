@@ -20,5 +20,5 @@
     "mongoose": "^8.10.1",
     "passport": "^0.7.0",
     "passport-local-mongoose": "^8.0.0"
-  }
+  } 
 }
