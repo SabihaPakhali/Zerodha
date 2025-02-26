@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const { HoldingsModel } = require("./model/HoldingsModel");
-const { PositionsModel } = require("./model/PositionsModel");
-const { OrdersModel } = require("./model/OrdersModel");
+const HoldingsModel = require("./model/HoldingsModel"); // ✅ Correct
+const PositionsModel = require("./model/PositionsModel"); // ✅ Correct
+const OrdersModel = require("./model/OrdersModel"); // ✅ Correct
 
 const PORT = process.env.PORT || 3002;
 const MONGO_URI = process.env.MONGO_URL;
@@ -73,6 +73,7 @@ mongoose
   .catch((err) => {
     console.error("❌ Database connection error:", err);
   });
+
 
 
 
