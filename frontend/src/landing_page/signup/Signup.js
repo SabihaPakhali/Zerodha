@@ -23,10 +23,12 @@ const Signup = () => {
       });
 
       if (response.data.token) {
+        console.log("Signup Successful, navigating to Dashboard");
         localStorage.setItem("token", response.data.token);
         alert("Signup Successful");
         navigate("/dashboard");
       }
+      
     } catch (error) {
       console.error("Signup Error:", error);
       alert("Signup Failed: " + (error.response?.data?.message || "Something went wrong"));
