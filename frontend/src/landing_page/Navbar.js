@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -10,7 +10,7 @@ function Navbar() {
       <div className="container p-2">
         <Link className="navbar-brand" to="/">
           <img
-            src="media/images/logo.svg"
+            src="/media/images/logo.svg"
             style={{ width: "25%" }}
             alt="Logo"
           />
@@ -30,27 +30,32 @@ function Navbar() {
           <form className="d-flex" role="search">
             <ul className="navbar-nav mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/signup">
+                <Link className="nav-link active" to="/signup">
                   Signup
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/about">
+                <Link className="nav-link active" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/about">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/product">
+                <Link className="nav-link active" to="/product">
                   Product
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/pricing">
+                <Link className="nav-link active" to="/pricing">
                   Pricing
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/support">
+                <Link className="nav-link active" to="/support">
                   Support
                 </Link>
               </li>
@@ -63,4 +68,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
 

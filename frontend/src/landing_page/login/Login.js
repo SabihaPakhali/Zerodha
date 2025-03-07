@@ -1,27 +1,28 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Signup = () => {
-  const [username, setUsername] = useState("");
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3002/api/signup", {
-        username,
+      const response = await axios.post("http://localhost:3002/api/login", {
         email,
         password,
       });
-  
+
       if (response.data.success) {
-        toast.success("Signup Successful");
-  
+        toast.success("Login Successful 🔑");
+
+        // Store token in localStorage
+        localStorage.setItem("token", response.data.token);
+
         setTimeout(() => {
           window.location.href = "http://localhost:3001/dashboard"; // Redirect to Dashboard App
         }, 2000);
@@ -29,23 +30,16 @@ const Signup = () => {
         toast.error(response.data.message);
       }
     } catch (err) {
-      toast.error("Signup Failed");
+      toast.error("Login Failed ❌");
       console.log(err);
     }
   };
-  
 
   return (
-    <div className="signup-container">
+    <div className="login-container">
       <ToastContainer />
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
           placeholder="Email"
@@ -58,16 +52,13 @@ const Signup = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
 };
 
-export default Signup;
-
-
-
+export default Login;
 
 
 
