@@ -1,4 +1,25 @@
 {
+<<<<<<< HEAD
+  "name": "my-react-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.8.1",
+    "bcryptjs": "^3.0.2",
+    "chart.js": "^4.4.8",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "react": "^18.3.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-cookie": "^7.2.2",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^7.2.0",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3"
+=======
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +37,7 @@
     "react-scripts": "^5.0.1",
     "react-toastify": "^11.0.5",
     "web-vitals": "^2.1.4"
+>>>>>>> ca7c697 (Initial commit)
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,6 +45,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+<<<<<<< HEAD
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+=======
+>>>>>>> ca7c697 (Initial commit)
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,6 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
+=======
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
@@ -48,5 +81,6 @@
     "env": {
       "jest": true
     }
+>>>>>>> ca7c697 (Initial commit)
   }
 }
