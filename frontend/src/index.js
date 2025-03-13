@@ -14,9 +14,11 @@ import NotFound from "./landing_page/NotFound";
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
 import ProtectedRoute from "./ProtectedRoute";
+import server from "./environment"; // Import API base URL
 
 // Axios Default Configuration
-axios.defaults.withCredentials = true;
+axios.defaults.baseURL = server; // Set backend API base URL
+axios.defaults.withCredentials = true; // Allow cookies for authentication
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
