@@ -1,7 +1,6 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; 
-import Toastify from "react-toastify";
+import axios from "axios";  // ✅ Ensure axios is imported
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,17 +13,16 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3002/api/signup", {
-        username,
-        email,
-        password,
-      });
-  
+      const response = await axios.post(
+        "http://localhost:3002/api/signup",
+        { username, email, password },
+        { withCredentials: true }
+      );
+
       if (response.data.success) {
         toast.success("Signup Successful");
-  
         setTimeout(() => {
-          window.location.href = "http://localhost:3001/dashboard"; // Redirect to Dashboard App
+          window.location.href = "http://localhost:3001/dashboard";
         }, 2000);
       } else {
         toast.error(response.data.message);
@@ -34,7 +32,6 @@ const Signup = () => {
       console.log(err);
     }
   };
-  
 
   return (
     <div className="signup-container">
@@ -66,6 +63,8 @@ const Signup = () => {
 };
 
 export default Signup;
+
+
 
 
 
