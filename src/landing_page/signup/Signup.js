@@ -14,7 +14,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3002/api/signup",
+        "https://zerodha-7qoh.onrender.com/api/signup", // ✅ Render backend URL
         { username, email, password },
         { withCredentials: true }
       );
@@ -22,7 +22,7 @@ const Signup = () => {
       if (response.data.success) {
         toast.success("Signup Successful");
         setTimeout(() => {
-          window.location.href = "http://localhost:3001/dashboard";
+          window.location.href="https://zerodha-dashboard-tazv.onrender.com";
         }, 2000);
       } else {
         toast.error(response.data.message);
